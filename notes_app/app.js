@@ -8,8 +8,6 @@
 
 // fs.appendFileSync('test.txt',"This is the test content second part")
 
-require('./utils')
-
-const name = "Harsh Gupta"
+const name = require('./utils')
 
 console.log(name)
