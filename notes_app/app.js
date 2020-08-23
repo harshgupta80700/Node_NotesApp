@@ -8,6 +8,8 @@
 
 // fs.appendFileSync('test.txt',"This is the test content second part")
 
-const name = require('./utils')
+const add = require('./utils')
 
-console.log(name)
+const sum = add(2,8)
+
+console.log(sum)

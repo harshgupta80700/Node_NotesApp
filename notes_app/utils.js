@@ -2,4 +2,8 @@ console.log("This is utils.js file")
 
 const name = "Harsh Gupta"
 
-module.exports = name
+const addfn = function(a,b){
+    return a+b
+}
+
+module.exports = addfn
