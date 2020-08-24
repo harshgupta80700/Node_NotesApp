@@ -40,3 +40,5 @@ console.log(validator.isURL('https:/google.com'))
 const chalk = require('chalk')
 
 console.log(chalk.blue('Hello World'))
+console.log(chalk.green.bgMagenta.bold("Hello World"))
+console.log(chalk.blue("Hello") + chalk.green("World") + chalk.red("!"))
