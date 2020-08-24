@@ -12,40 +12,53 @@
 // console.log(data.length)
 
 
-const add = require('./utils')
-const sub = require('./subtract')
+// const add = require('./utils')
+// const sub = require('./subtract')
 
-const sum = add(2,8)
-const diff = sub(10,5)
+// const sum = add(2,8)
+// const diff = sub(10,5)
 
-console.log(add(2,4))
-console.log(sub(2,10))
+// console.log(add(2,4))
+// console.log(sub(2,10))
 
-console.log(sum)
-console.log(diff)
+// console.log(sum)
+// console.log(diff)
+
+// console.log(getNotes())
+
+// console.log(getnotesstring)
+
+// const validator = require('validator')
+
+// console.log(validator.isEmail('harsh@exampe.com'))
+// console.log(validator.isURL('https:/google.com'))
+
+// const chalk = require('chalk')
+
+// console.log(chalk.blue('Hello World'))
+// console.log(chalk.green.bgMagenta.bold(validator.isEmail("harsh@e.com")))
+// console.log(chalk.blue("Hello") + chalk.green("World") + chalk.red("!"))
+// console.log(chalk.red("Hello", chalk.blue.bgYellow.underline("World")))
+// console.log(chalk.red("Hello", chalk.blue.bgGreen.inverse("World")))
+// console.log(chalk.bold("hello"))
+// console.log(chalk.inverse("hello"))
+
+// console.log(process.argv)
+// console.log(process.argv[2])
 
 const getNotes = require('./notes')
+const yargs = require('yargs')
 
 const getnotesstring = getNotes()
 
-console.log(getNotes())
-
-console.log(getnotesstring)
-
-const validator = require('validator')
-
-console.log(validator.isEmail('harsh@exampe.com'))
-console.log(validator.isURL('https:/google.com'))
-
-const chalk = require('chalk')
-
-console.log(chalk.blue('Hello World'))
-console.log(chalk.green.bgMagenta.bold(validator.isEmail("harsh@e.com")))
-console.log(chalk.blue("Hello") + chalk.green("World") + chalk.red("!"))
-console.log(chalk.red("Hello", chalk.blue.bgYellow.underline("World")))
-console.log(chalk.red("Hello", chalk.blue.bgGreen.inverse("World")))
-console.log(chalk.bold("hello"))
-console.log(chalk.inverse("hello"))
+const commandlineargument = process.argv[2]
 
 console.log(process.argv)
-console.log(process.argv[2])
+
+console.log(commandlineargument)
+
+if(commandlineargument === 'addnote'){
+    console.log('adding note')
+}else if(commandlineargument === 'removenote'){
+    console.log('removing note')
+}
