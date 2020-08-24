@@ -35,3 +35,8 @@ console.log(getnotesstring)
 const validator = require('validator')
 
 console.log(validator.isEmail('harsh@exampe.com'))
+console.log(validator.isURL('https:/google.com'))
+
+const chalk = require('chalk')
+
+console.log(chalk.blue('Hello World'))
