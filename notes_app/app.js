@@ -48,6 +48,8 @@
 
 const getNotes = require('./notes')
 const yargs = require('yargs')
+const { describe } = require('yargs')
+//const { describe } = require('yargs')
 
 const getnotesstring = getNotes()
 
@@ -55,8 +57,8 @@ const commandlineargument = process.argv[2]
 
 yargs.version('1.1.0')
 
-console.log(process.argv)
-console.log(yargs.argv)
+// console.log(process.argv)
+// console.log(yargs.argv)
 
 // console.log(commandlineargument)
 
@@ -65,3 +67,15 @@ console.log(yargs.argv)
 // }else if(commandlineargument === 'removenote'){
 //     console.log('removing note')
 // }
+
+//console.log('hello')
+
+//console.log(yargs.argv)
+
+yargs.command({
+    command: 'add',
+    describe: 'xyz',
+    handler: function(){
+        console.log('adding..')
+    }
+})

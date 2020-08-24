@@ -11,9 +11,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "validator": "^13.1.1",
-    "yargs": "^15.4.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
+    "yargs": "^15.4.1",
+    "nodemon": "2.0.4"
   }
 }
