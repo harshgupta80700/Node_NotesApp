@@ -53,12 +53,15 @@ const getnotesstring = getNotes()
 
 const commandlineargument = process.argv[2]
 
+yargs.version('1.1.0')
+
 console.log(process.argv)
+console.log(yargs.argv)
 
-console.log(commandlineargument)
+// console.log(commandlineargument)
 
-if(commandlineargument === 'addnote'){
-    console.log('adding note')
-}else if(commandlineargument === 'removenote'){
-    console.log('removing note')
-}
+// if(commandlineargument === 'addnote'){
+//     console.log('adding note')
+// }else if(commandlineargument === 'removenote'){
+//     console.log('removing note')
+// }
