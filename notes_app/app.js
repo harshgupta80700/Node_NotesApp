@@ -31,3 +31,7 @@ const getnotesstring = getNotes()
 console.log(getNotes())
 
 console.log(getnotesstring)
+
+const validator = require('validator')
+
+console.log(validator.isEmail('harsh@exampe.com'))
