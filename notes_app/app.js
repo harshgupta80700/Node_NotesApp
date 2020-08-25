@@ -48,7 +48,7 @@
 
 const getNotes = require('./notes')
 const yargs = require('yargs')
-const { describe } = require('yargs')
+const { describe, demandOption } = require('yargs')
 //const { describe } = require('yargs')
 
 const getnotesstring = getNotes()
@@ -92,8 +92,15 @@ yargs.command({
 yargs.command({
     command: 'add',
     describe: 'Add a new note',
-    handler: function () {
-        console.log('Adding a new note!')
+    builder:{
+        title:{
+            describe: 'Note Title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function (argv) {
+        console.log('Adding a new note!',argv)
     }
 })
 
@@ -113,4 +120,6 @@ yargs.command({
     }
 })
 
-console.log(yargs.argv)
+yargs.parse()
+
+//console.log(yargs.argv)
