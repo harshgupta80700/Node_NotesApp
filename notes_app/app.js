@@ -46,12 +46,12 @@
 // console.log(process.argv)
 // console.log(process.argv[2])
 
-const getNotes = require('./notes')
+const notes = require('./notes')
 const yargs = require('yargs')
 const { describe, demandOption } = require('yargs')
 //const { describe } = require('yargs')
 
-const getnotesstring = getNotes()
+//const getnotesstring = getNotes()
 
 const commandlineargument = process.argv[2]
 
@@ -98,7 +98,8 @@ yargs.command({
         }
     },
     handler: function (argv) {
-        console.log('New note added\n'+'Title: '+argv.title+'\nBody: '+argv.body)
+        // console.log('New note added\n'+'Title: '+argv.title+'\nBody: '+argv.body)
+        notes.addNote(argv.title,argv.body)
     }
 })
 
