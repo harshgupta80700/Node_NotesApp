@@ -57,6 +57,7 @@ const commandlineargument = process.argv[2]
 
 yargs.version('1.1.0')
 
+
 // console.log(process.argv)
 // console.log(yargs.argv)
 
@@ -79,3 +80,37 @@ yargs.command({
         console.log('Adding a new note!')
     }
 })
+
+yargs.command({
+    command: 'remove',
+    describe: 'Removing a note',
+    handler: function () {
+        console.log('Removing a note!')
+    }
+})
+
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note',
+    handler: function () {
+        console.log('Adding a new note!')
+    }
+})
+
+yargs.command({
+    command: 'read',
+    describe: 'Reading a note',
+    handler: function () {
+        console.log('Reading a note!')
+    }
+})
+
+yargs.command({
+    command: 'list',
+    describe: 'List out the notes',
+    handler: function () {
+        console.log('Listing out the notes!')
+    }
+})
+
+console.log(yargs.argv)
