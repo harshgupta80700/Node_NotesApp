@@ -4,9 +4,7 @@ const chalk = require('chalk')
 const { title } = require('process')
 const { bold } = require('chalk')
 
-const getNotesFunction = function(){
-    return "Your notes..."
-}
+const getNotesFunction = () => "Your notes..."
 
 const addNote = (title , body) => {
     const notes = loadNotes()
@@ -61,10 +59,24 @@ const removenote = (title) => {
 
 }
 
+const listnote = ()=>{
+    const notes = loadNotes()
+    //console.log(notes)
+    if (notes.length === 0) {
+        console.log('No note found')
+    }else{
+        console.log(chalk.yellow.inverse.bold('Your Notes:'))
+        notes.forEach(element => {
+            console.log(element.title)
+        });
+    }
+}
+
 
 
 module.exports = {
     getNotesFunction: getNotesFunction,
     addNote: addNote,
-    removenote: removenote
+    removenote: removenote,
+    listnote: listnote
 }
