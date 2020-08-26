@@ -45,7 +45,20 @@ const saveNotes = function(notes){
 
 
 const removenote = function(title){
-    console.log("Remove note called")
+    const notes = loadNotes()
+    //console.log(notes)
+    const dublicatedata = notes.filter(function(note){
+        return !(note.title === title)
+    })
+    //console.log(dublicatedata)
+
+    if(dublicatedata.length === notes.length){
+        console.log('Note with this title doesn\'t exist')
+    }else{
+        const dataJSON = JSON.stringify(dublicatedata)
+        fs.writeFileSync('notes.json',dataJSON)
+    }
+
 }
 
 
