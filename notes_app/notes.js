@@ -8,11 +8,9 @@ const getNotesFunction = function(){
     return "Your notes..."
 }
 
-const addNote = function(title , body){
+const addNote = (title , body) => {
     const notes = loadNotes()
-    const notestokeep = notes.filter(function(note){
-        return note.title === title
-    })
+    const notestokeep = notes.filter((note) => note.title === title)
 
     if (notestokeep.length === 0) {
 
@@ -31,7 +29,7 @@ const addNote = function(title , body){
     
 }
 
-const loadNotes = function(){
+const loadNotes = () =>{
     try{
         DataBuffer = fs.readFileSync('notes.json')
         const JSONdata = DataBuffer.toString()
@@ -42,18 +40,16 @@ const loadNotes = function(){
     }
 }
 
-const saveNotes = function(notes){
+const saveNotes = (notes)=>{
     const dataJSON = JSON.stringify(notes)
     fs.writeFileSync('notes.json',dataJSON)
 }
 
 
-const removenote = function(title){
+const removenote = (title) => {
     const notes = loadNotes()
     //console.log(notes)
-    const notestokeep = notes.filter(function(note){
-        return !(note.title === title)
-    })
+    const notestokeep = notes.filter((note) => !(note.title === title))
     //console.log(notestokeep)
 
     if(notestokeep.length === notes.length){
