@@ -30,7 +30,7 @@ const dataJSON = DataBuffer.toString()
 const data = JSON.parse(dataJSON)
 data.name = 'Harsh'
 data.planet = 'Moon'
-data.age = '20'
+data.age = 20
 
 const datatowrite = JSON.stringify(data)
 fs.writeFileSync('1-json.json',datatowrite)
