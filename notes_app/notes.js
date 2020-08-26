@@ -72,11 +72,22 @@ const listnote = ()=>{
     }
 }
 
+const readnote = (title)=>{
+    const notes = loadNotes()
+    const notetoread = notes.find((note)=>note.title===title)
+    if(notetoread){
+        console.log(chalk.green.inverse(notetoread.body))
+    }else{
+        console.log(chalk.red.inverse('No note found!'))
+    }
+}
+
 
 
 module.exports = {
     getNotesFunction: getNotesFunction,
     addNote: addNote,
     removenote: removenote,
-    listnote: listnote
+    listnote: listnote,
+    readnote: readnote
 }
