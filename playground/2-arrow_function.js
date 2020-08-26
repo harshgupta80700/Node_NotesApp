@@ -43,7 +43,7 @@ const event4 = {
     printguestList(){
         const that = this
         console.log('This is the list of guest for the event '+ this.name)
-        this.guestList.forEach(function(guest){
+        this.guestList.forEach((guest)=>{
             console.log(guest + ' is attending '+ that.name)
         })
     }
