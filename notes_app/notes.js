@@ -9,9 +9,9 @@ const getNotesFunction = () => "Your notes..."
 const addNote = (title , body) => {
     const notes = loadNotes()
     const notestokeep = notes.filter((note) => note.title === title)
+    const findnotetitle = notes.find((note)=>note.title === title)
 
-    if (notestokeep.length === 0) {
-
+    if (!findnotetitle) {
         notes.push({
             title: title,
             body: body
