@@ -1,4 +1,5 @@
 const fs = require('fs')
+const { title } = require('process')
 
 const getNotesFunction = function(){
     return "Your notes..."
@@ -42,7 +43,15 @@ const saveNotes = function(notes){
     fs.writeFileSync('notes.json',dataJSON)
 }
 
+
+const removenote = function(title){
+    console.log("Remove note called")
+}
+
+
+
 module.exports = {
     getNotesFunction: getNotesFunction,
-    addNote: addNote
+    addNote: addNote,
+    removenote: removenote
 }
