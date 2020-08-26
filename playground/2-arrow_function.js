@@ -34,6 +34,22 @@ const event3 = {
     printguestList: () => console.log('This is the list of guest for the event '+ this.name)
 }
 
-event.printguestList()
-event2.printguestList()
-event3.printguestList()
+
+// arrow functions dont bind their own object values solved with ES6 method
+
+const event4 = {
+    name: 'Newbie party',
+    guestList: ['Harsh','Gupta'],
+    printguestList(){
+        console.log('This is the list of guest for the event '+ this.name)
+        this.guestList.forEach(function(guest){
+            console.log(guest + ' is attending '+ this.name)
+        })
+    }
+}
+
+
+// event.printguestList()
+// event2.printguestList()
+// event3.printguestList()
+event4.printguestList()
