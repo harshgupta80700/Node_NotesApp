@@ -1,5 +1,8 @@
 const fs = require('fs')
+const chalk = require('chalk')
+
 const { title } = require('process')
+const { bold } = require('chalk')
 
 const getNotesFunction = function(){
     return "Your notes..."
@@ -18,10 +21,10 @@ const addNote = function(title , body){
             body: body
         })    
         saveNotes(notes)
-        console.log('New Note Added')
+        console.log(chalk.bgGreen.bold('New Note Added'))
 
     } else {
-        console.log('Note title Taken!')
+        console.log(chalk.bgRed.bold('Note title Taken!'))
     
     }
 
@@ -54,9 +57,10 @@ const removenote = function(title){
     //console.log(notestokeep)
 
     if(notestokeep.length === notes.length){
-        console.log('Note with this title doesn\'t exist')
+        console.log(chalk.bgRed.bold('Note with this title doesn\'t exist'))
     }else{
         saveNotes(notestokeep)
+        console.log(chalk.bgGreen.bold('Note Deleted'))
     }
 
 }
